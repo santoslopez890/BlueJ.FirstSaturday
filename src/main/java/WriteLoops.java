@@ -150,13 +150,16 @@ for(int i=5;i<=105;i++){
         int w = 0;
 
         // you need to use a .equals for two Strings.
-
+while(gps<=5){
+    gpsCurrentLocation();
+    gps++;
+}
             // calling
-            w = w + 1;
+
             // each time through the inner loop
         
 
-            return w;
+            return gps;
     }
 
     // Getting harder...
@@ -165,7 +168,7 @@ for(int i=5;i<=105;i++){
     // is less than “highestScore” and if it is, adds “currentScore” to
     // "runningScore"
     // and then sets “currentScore” to “gameNextScore()”
-    public int checkGameScore() {
+    public boolean checkGameScore() {
         int w = 0;
         int highestScore = 236;
         int currentScore = gameNextScore();
@@ -178,7 +181,7 @@ for(int i=5;i<=105;i++){
 
                 // each time through the inner loop
             }
-        return runningScore; // >= 3;
+        return runningScore >= 3;
     }
 
     // Rewrite the previous WHILE loop as a DO..WHILE loop.
@@ -190,9 +193,14 @@ for(int i=5;i<=105;i++){
         int runningScore = 0;
 
         // do your while loop here
-
+        do {
             // calling
+            runningScore+=currentScore;
             w = w + 1;
+            // each time through the inner loop
+        }
+        while(runningScore<highestScore);
+            // calling
             // each time through the inner loop
 
         return w >= 3;
